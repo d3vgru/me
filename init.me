@@ -1,5 +1,14 @@
+import Being
+import Parents
+
+global $me
+
+// FIXME where does $me actually come from? can't use $being because recursion
+$parents = Parents.getParents($me);
 $being = new Being($parents);
 
 try {
     $being.nice();
+} catch(Exception $ex) {
+    $me.weeps()
 }
