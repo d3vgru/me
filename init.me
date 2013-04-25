@@ -10,7 +10,11 @@ $being = new Being($parents);
 try {
     $being.nice();
 } catch(YoureAFuckingAssholeException ex) {
-    $being.coolAndSuave();
+    try {
+        $being.coolAndSuave();
+    } catch(WhoDoYouThinkYourKiddingException oof) {
+        $being.coolAintAllItsCrackedUpToBe();
+    }
 } catch(Exception $ex) {
     $me.weeps()
 }
