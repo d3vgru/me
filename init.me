@@ -4,17 +4,22 @@ import Parents
 global $me
 
 // FIXME where does $me actually come from? can't use $being because recursion
-$parents = Parents.getParents($me);
-$being = new Being($parents);
+// let's leave my parents out of this
+//$parents = Parents.getParents($me);
+//$being = new Being($parents);
+
+// technically this isn't the same as above
+// the objects do implement the same interface though, so whatever
+$being = $me;
 
 try {
     $being.nice();
-} catch(ImTheOneWhoIsAFuckingAssholeException ex) {
+} catch(ImTheOneWhoIsAFuckingAssholeException $ex) {
     $being.aLotMoreLikely();
-} catch(YoureAFuckingAssholeException ex) {
+} catch(YoureAFuckingAssholeException $ex) {
     try {
         $being.coolAndSuave();
-    } catch(WhoDoYouThinkYoureKiddingException oof) {
+    } catch(WhoDoYouThinkYoureKiddingException $oof) {
         $being.coolAintAllItsCrackedUpToBe();
     }
 } finally {
